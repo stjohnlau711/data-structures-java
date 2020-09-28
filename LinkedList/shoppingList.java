@@ -1,4 +1,4 @@
-public class shoppingList { //LinkedList implementation but using a shopping list as a frame of reference
+public class shoppingList { //Doubly linked list implementation but using a shopping list as a frame of reference
 
     public static class Node<E> {
         public E element;
