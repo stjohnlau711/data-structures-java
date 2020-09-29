@@ -1,4 +1,4 @@
-public class shoppingList { //Doubly linked list implementation but using a shopping list as a frame of reference
+public class shoppingList { //Doubly Linked List implementation, using a shopping list as a frame of reference
 
     public static class Node<E> {
         public E element;
@@ -72,7 +72,7 @@ public class shoppingList { //Doubly linked list implementation but using a shop
     public void print() {
         Node current = header;
         while(current != null){
-            System.out.println(current.element);
+            current.print();
             current = current.next;
         }
     }
