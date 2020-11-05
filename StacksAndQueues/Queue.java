@@ -1,4 +1,4 @@
-public class Queue {
+public class Queue { //Queue implementation with linked list
 
     private class Node {
         int data;
