@@ -1,4 +1,4 @@
-public class Stack {
+public class Stack { //Stack implementation as a linked list 
 
     private class Node {
         int data;
