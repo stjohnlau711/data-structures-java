@@ -50,11 +50,12 @@ public class AVLTree {
             //left-left case
             if(node.left.bf >= 0){ //This means left node is either perfectly balanced
                 // or slightly left heavy
-                return leftLeftCase(node); //perform right rotation on node
+                return rightRotation(node); //perform right rotation on node
 
             //left-right case
             } else { //this means left node is slightly right heavy
-                return leftRightCase(node); //performs left rotation on node.left
+                node.left = leftRotation(node.left);
+                return rightRotation(node); //performs left rotation on node.left
                 //then performs right rotation on node
             }
         } else if(node.bf == - 2){
@@ -62,32 +63,17 @@ public class AVLTree {
             //right-right case
             if(node.right.bf <= 0){ //this means right node is either perfectly balanced
                 // or slightly right heavy
-                return rightRightCase(node); //performs left rotation on node
+                return leftRotation(node); //performs left rotation on node
 
             //right-left case
             } else { //this means right node is slightly left heavy
-                return rightLeftCase(node); //performs right rotation on node.right
+                node.right = rightRotation(node);
+                return leftRotation(node); //performs right rotation on node.right
                 //then performs left rotation on node
             }
+        } else {
+            return node;
         }
-    }
-
-    private Node leftLeftCase(Node node){
-        return rightRotation(node); //right rotation on node
-
-    }
-    private Node leftRightCase(Node node){
-        node.left = leftRotation(node.left); //left rotation on node.left
-        return rightRotation(node); //right rotation on node
-
-    }
-    private Node rightRightCase(Node node){
-        return leftRotation(node); //left rotation on node
-    }
-    private Node rightLeftCase(Node node){
-        node.right = rightRotation(node); //right rotation on node.right
-        return leftRotation(node); //left rotation on node
-
     }
 
     private Node rightRotation(Node node){
